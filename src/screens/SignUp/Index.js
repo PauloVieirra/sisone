@@ -8,7 +8,7 @@ export default function SignIn() {
    <View>
     <TouchableOpacity onPress={() => navigation.navigate('Termos')}>
        <Text>
-        Pagina de cadastro
+        Pagina de cadastro para seletiva
     </Text>
     </TouchableOpacity>
    

@@ -2,9 +2,23 @@ import { StyleSheet } from "react-native";
 
 const stylesy = StyleSheet.create({
 
-    textmenu:{
+    textinto:{
+        fontSize:16,
         color:"#fff"
     },
+    textbtn:{
+        fontSize:15,
+        color:"#fff"
+    },
+    textbtnd:{
+        fontSize:20,
+        color:"#fff"
+    },
+    textintotitle:{
+        fontSize:20,
+        color:"#fff"
+    },
+    
     textnametop:{
         fontSize:24,
         color:"#fff"
