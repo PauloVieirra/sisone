@@ -31,7 +31,16 @@ const stylesy = StyleSheet.create({
         fontSize:12,
         color:'#eee:rgba(255,255,255,0.8)',
     },
-    
+    btn:{
+        width:"20%",
+        height:45,
+        borderRadius:6,
+        margin:10,
+        backgroundColor:"#ff6847",
+        justifyContent:'center',
+        alignItems:'center',
+        fontSize:30
+    },
 
 });
 

@@ -3,22 +3,18 @@ import { View, Text, TouchableOpacity,Image, ImageBackground, Pressable } from '
 import stylesy from './style';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
-
+import Count from '../../componets/Count';
 import { CreateResponsiveStyle, DEVICE_SIZES } from 'rn-responsive-styles';
 const image = { uri: "https://docs.expo.dev/static/images/tutorial/splash.png" };
 
 
 export default function Preloader() {
 
-    
-
     const navigation = useNavigation();
     const { styles, deviceSize } = useStyles();
     console.log(styles);
     
     const image = { uri: 'https://wallpaperaccess.com/full/1744056.jpg' };
-
-    
 
     const handlecad = () => {
      setCall('');
@@ -30,7 +26,6 @@ export default function Preloader() {
      setCad('');
      setCall('call');
     }
-
 
  return (
    <View style={styles('container')}>
@@ -44,8 +39,6 @@ export default function Preloader() {
     <View style={styles ('containleft')}>
          <ImageBackground source={image} style={styles('backgroundimage')}>
                      
-          
-
               <View style={styles('contimg')}>
                     <Image source={require('../../../assets/plushunter.png')} style={styles('img')}/>
                     <View style={styles('contimgplay')}>
@@ -57,43 +50,33 @@ export default function Preloader() {
                          <TouchableOpacity style={styles('btnlog')}> <Text style={styles('txt')}>LOGIN</Text> </TouchableOpacity>
                     </View>
               </View>
-              <View style={styles('conttexttitlee')}>
-                   <Text style={stylesy.textintotitle}> Basquete e educação ao seu alcance</Text>
-              </View>
-              <View style={styles('conttext')}>
-              <Text style={stylesy.textinto}> 
+    <View style={styles('conttexttitlee')}>
+        <Text style={stylesy.textintotitle}> Basquete e educação ao seu alcance</Text>
+    </View>
+    <View style={styles('conttext')}>
+        <Text style={stylesy.textinto}> 
                    Aqui você poderá procurar por Universidades e High Schools americanas, 
                    aprender com dicas de como conseguir sua própria bolsa de estudos, 
                    ter aulas com os maiores especialistas do mercado de basquete através 
-                   de vídeos exclusivos.</Text>
-              </View>
-               </ImageBackground>
+                   de vídeos exclusivos.
+        </Text>
+        </View>
+        </ImageBackground>
     </View>
     <View style={styles('score')}>
-
+       
     </View>
 
-
-   
-   
     <View style={styles('containright')}>
-
-           <Pressable style={styles('btnbf')} onPress={() => navigation.navigate ("SignIn")}>
-           <Text style={styles('textbtnbf')}> Login </Text>
-           </Pressable>
-
+             
            <Pressable style={styles('btnb')} onPress={() => navigation.navigate ("SignIn")}>
            <Text style={styles('textbtnb')}> Login </Text>
            </Pressable>
-
+           
            <Pressable style={styles('btn')} onPress={() => navigation.navigate ("Select")}>
            <Text style={stylesy.textbtn}> Seletiva </Text>
            </Pressable>
            
-   
-         
-        
-       
     </View>
    
     </LinearGradient>
@@ -107,13 +90,10 @@ const useStyles = CreateResponsiveStyle(
                flex:1,
                backgroundColor:"#292C33"
            },
-
            txt:{
              color:'#eee:rgba(0,0,0,0.0)',
             fontSize:18
-        
          },
-       
            containleft:{
                width:"100%",
                height:"50%",
@@ -127,7 +107,6 @@ const useStyles = CreateResponsiveStyle(
            conttexttitlee:{
                width:"100%",
                alignItems:'center'
-               
            },
            textintotitle:{
             fontSize:25,
@@ -161,19 +140,18 @@ const useStyles = CreateResponsiveStyle(
                justifyContent:'center',
                alignItems:'center'
            },
+           textbtnb:{
+            color:"#fff"
+         },
            image:{
                width:"100%",
                height:"100%",
-              
-       
            },
            btnmenu:{
-
-            
             width:70,
-               height:"100%",
-               alignItems:'center',
-               justifyContent:'center',
+            height:"100%",
+            alignItems:'center',
+            justifyContent:'center',
            },
            btnmenusair:{
                width:100,
@@ -198,7 +176,7 @@ const useStyles = CreateResponsiveStyle(
                alignItems:'center',
                justifyContent:'center'
            },
-           btnbf:{
+           btnb:{
             width:"80%",
              height:50,
              borderRadius:6,
@@ -211,9 +189,6 @@ const useStyles = CreateResponsiveStyle(
          textbtnbf:{
             color:"#fff"
          },
-          
-          
-   
      },
    
      {
@@ -222,20 +197,7 @@ const useStyles = CreateResponsiveStyle(
           flex:1,
           backgroundColor:"#fff"
       },
-      btnb:{
-        width:"80%",
-         height:50,
-         borderRadius:6,
-         margin:10,
-         backgroundColor:"#ff6847",
-         justifyContent:'center',
-         alignItems:'center',
-         color:"#fff"
-     },
-     textbtnb:{
-        color:"#fff"
-     },
-   
+
        },
        [DEVICE_SIZES.MEDIUM_DEVICE]: {
         container:{
@@ -353,9 +315,7 @@ btn:{
         alignItems:'flex-start',
         paddingTop:100,
         paddingLeft:20,
-
-
- },
+    },
 
  conttexttitlee:{
      alignItems:'flex-start',
@@ -370,7 +330,7 @@ btn:{
      paddingBottom:20
     
  },
- contimgplay:{
+    contimgplay:{
     alignItems:'flex-end',
      justifyContent:'flex-start',
      paddingLeft:"30%",
@@ -405,21 +365,9 @@ img:{
     left:30,
     zIndex:2
    },
-btn:{
-     width:"20%",
-     height:45,
-     borderRadius:6,
-     margin:10,
-     backgroundColor:"#ff6847",
-     justifyContent:'center',
-     alignItems:'center',
-     fontSize:30
- },
  image:{
      width:"100%",
      height:"100%",
-    
-
  },
  btnmenu:{
      width:70,
@@ -464,7 +412,33 @@ btn:{
     width:"100%",
     height:60,
     backgroundColor:"#eee"
- }
+ },
+ btnb:{
+    width:"41%",
+     height:50,
+     borderRadius:6,
+     margin:10,
+     backgroundColor:"#ff6847",
+     justifyContent:'center',
+     alignItems:'center',
+     color:"#fff"
+ },
+ textbtnbf:{
+    color:"#fff"
+ },
+ btn:{
+    width:"40%",
+     height:50,
+     borderRadius:6,
+     margin:10,
+     backgroundColor:"#ff6847",
+     justifyContent:'center',
+     alignItems:'center',
+     color:"#fff"
+ },
+ textbtn:{
+    color:"#fff"
+ },
  
        },
    
