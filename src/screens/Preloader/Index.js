@@ -512,16 +512,6 @@ img:{
  left:30,
  zIndex:2
 },
-btn:{
-     width:"20%",
-     height:45,
-     borderRadius:6,
-     margin:10,
-     backgroundColor:"#ff6847",
-     justifyContent:'center',
-     alignItems:'center',
-     fontSize:30
- },
  image:{
      width:"100%",
      height:"100%",
@@ -567,6 +557,32 @@ btn:{
     justifyContent:'center',
     right:30,
     top:20
+ },
+ btnb:{
+    width:"41%",
+     height:50,
+     borderRadius:6,
+     margin:10,
+     backgroundColor:"#ff6847",
+     justifyContent:'center',
+     alignItems:'center',
+     color:"#fff"
+ },
+ textbtnbf:{
+    color:"#fff"
+ },
+ btn:{
+    width:"40%",
+     height:50,
+     borderRadius:6,
+     margin:10,
+     backgroundColor:"#ff6847",
+     justifyContent:'center',
+     alignItems:'center',
+     color:"#fff"
+ },
+ textbtn:{
+    color:"#fff"
  },
        },
      },
