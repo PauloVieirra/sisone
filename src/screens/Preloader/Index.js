@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { View, Text, TouchableOpacity,Image, ImageBackground } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { View, Text, TouchableOpacity,Image, ImageBackground, Pressable } from 'react-native';
 import stylesy from './style';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -14,7 +14,11 @@ export default function Preloader() {
 
     const navigation = useNavigation();
     const { styles, deviceSize } = useStyles();
+    console.log(styles);
+    
     const image = { uri: 'https://wallpaperaccess.com/full/1744056.jpg' };
+
+    
 
     const handlecad = () => {
      setCall('');
@@ -50,6 +54,7 @@ export default function Preloader() {
                          <TouchableOpacity style={styles('btnmenusup')}> <Text style={styles('txt')}>Visto e Passaporte</Text> </TouchableOpacity>
                          <TouchableOpacity style={styles('btnmenusup')}> <Text style={styles('txt')}>Acompanhamento</Text> </TouchableOpacity>
                          <TouchableOpacity style={styles('btnmenusup')}> <Text style={styles('txt')}>Educação</Text> </TouchableOpacity>
+                         <TouchableOpacity style={styles('btnlog')}> <Text style={styles('txt')}>LOGIN</Text> </TouchableOpacity>
                     </View>
               </View>
               <View style={styles('conttexttitlee')}>
@@ -64,19 +69,27 @@ export default function Preloader() {
               </View>
                </ImageBackground>
     </View>
+    <View style={styles('score')}>
+
+    </View>
 
 
    
    
     <View style={styles('containright')}>
+
+           <Pressable style={styles('btnbf')} onPress={() => navigation.navigate ("SignIn")}>
+           <Text style={styles('textbtnbf')}> Login </Text>
+           </Pressable>
+
+           <Pressable style={styles('btnb')} onPress={() => navigation.navigate ("SignIn")}>
+           <Text style={styles('textbtnb')}> Login </Text>
+           </Pressable>
+
+           <Pressable style={styles('btn')} onPress={() => navigation.navigate ("Select")}>
+           <Text style={stylesy.textbtn}> Seletiva </Text>
+           </Pressable>
            
-           <TouchableOpacity style={styles('btn')}>
-           <Text style={stylesy.textbtn} onPress={() => navigation.navigate ("SignIn")}> Login </Text>
-           </TouchableOpacity>
-         
-           <TouchableOpacity style={styles('btn')}>
-           <Text style={stylesy.textbtn} onPress={() => navigation.navigate ("Select")}> Seletiva </Text>
-           </TouchableOpacity>
    
          
         
@@ -185,6 +198,21 @@ const useStyles = CreateResponsiveStyle(
                alignItems:'center',
                justifyContent:'center'
            },
+           btnbf:{
+            width:"80%",
+             height:50,
+             borderRadius:6,
+             margin:10,
+             backgroundColor:"#ff6847",
+             justifyContent:'center',
+             alignItems:'center',
+             color:"#fff"
+         },
+         textbtnbf:{
+            color:"#fff"
+         },
+          
+          
    
      },
    
@@ -194,6 +222,19 @@ const useStyles = CreateResponsiveStyle(
           flex:1,
           backgroundColor:"#fff"
       },
+      btnb:{
+        width:"80%",
+         height:50,
+         borderRadius:6,
+         margin:10,
+         backgroundColor:"#ff6847",
+         justifyContent:'center',
+         alignItems:'center',
+         color:"#fff"
+     },
+     textbtnb:{
+        color:"#fff"
+     },
    
        },
        [DEVICE_SIZES.MEDIUM_DEVICE]: {
@@ -242,7 +283,7 @@ img:{
 },
 btn:{
      width:"40%",
-     height:80,
+     height:50,
      borderRadius:6,
      margin:10,
      backgroundColor:"#ff6847",
@@ -277,6 +318,19 @@ btn:{
  },
  textmenu:{
      color:"#fff"
+ },
+ btnb:{
+    width:"40%",
+     height:50,
+     borderRadius:6,
+     margin:10,
+     backgroundColor:"#ff6847",
+     justifyContent:'center',
+     alignItems:'center',
+     color:"#fff"
+ },
+ textbtnb:{
+    color:"#fff"
  },
        },
    
@@ -319,7 +373,7 @@ btn:{
  contimgplay:{
     alignItems:'flex-end',
      justifyContent:'flex-start',
-     paddingLeft:"40%",
+     paddingLeft:"30%",
     flexDirection:'row',
     width:"100%",
     height:"20%",
@@ -393,8 +447,25 @@ btn:{
  txt:{
     color:"#fff",
     fontSize:14
-
+ },
+ btnlog:{
+    width:100,
+    height:35,
+    borderRadius:6,
+    borderWidth:1,
+    borderColor:"#fff", 
+    position:'absolute',
+    alignItems:'center',
+    justifyContent:'center',
+    right:30,
+    top:20
+ },
+ score:{
+    width:"100%",
+    height:60,
+    backgroundColor:"#eee"
  }
+ 
        },
    
        [DEVICE_SIZES.EXTRA_LARGE_DEVICE]: {
@@ -510,7 +581,19 @@ btn:{
     color:"#fff",
     fontSize:14
 
- }
+ },
+ btnlog:{
+    width:100,
+    height:35,
+    borderRadius:6,
+    borderWidth:1,
+    borderColor:"#fff", 
+    position:'absolute',
+    alignItems:'center',
+    justifyContent:'center',
+    right:30,
+    top:20
+ },
        },
      },
    )
