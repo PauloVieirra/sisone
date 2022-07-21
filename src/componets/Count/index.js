@@ -2,32 +2,42 @@ import React from 'react';
 import { View,StyleSheet,Text } from 'react-native';
 
 export default function Count() {
-    function count(){
-        var counter = { var: 0 };
-        TweenMax.to(counter, 3, {
-          var: 100, 
-          onUpdate: function () {
-            var number = Math.ceil(counter.var);
-            $('.container').html(number);
-            if(number === counter.var){ count.kill(); }
-          },
-          onComplete: function(){
-            count();
-          },    
-          ease:Circ.easeOut
-        });
-      }
-      
-      count();
+   
  return (
-   <View style={styles.container}><Text>0</Text></View>
+    <View style={styles.container}>
+      <View style={styles.contnumber}>
+      <Text style={{colo:"#fff", fontSize:20}}>38</Text>
+      <Text style={{colo:"#fff", fontSize:13}}>Participante</Text>
+      </View>
+      <View style={styles.contnumber}>
+      <Text style={{colo:"#fff", fontSize:20}}>25</Text>
+      <Text style={{colo:"#fff", fontSize:13}}>Participante</Text>
+      </View>
+      <View style={styles.contnumber}>
+      <Text style={{colo:"#fff", fontSize:20}}>25</Text>
+      <Text style={{colo:"#fff", fontSize:13}}>Participante</Text>
+      </View>
+      <View style={styles.contnumber}>
+      <Text style={{colo:"#fff", fontSize:20}}>25</Text>
+      <Text style={{colo:"#fff", fontSize:13}}>Participante</Text>
+      </View>
+   
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
     container:{
+        flexDirection:'row',
         width:"100%",
-    height:60,
-    backgroundColor:"#eee"
+        height:"100%",
+        backgroundColor:"#658891"
  },
+    contnumber:{
+      width:"25%",
+      height:"100%",
+      justifyContent:'center',
+      alignItems:'center',
+      backgroundColor:"#556699"
+    }
 })

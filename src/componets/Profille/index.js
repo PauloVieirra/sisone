@@ -2,6 +2,7 @@ import React, { useContext, useState} from 'react';
 import { AuthContext } from '../../services/auth';
 import { CreateResponsiveStyle, DEVICE_SIZES } from 'rn-responsive-styles';
 import { View, Text, ScrollView , SafeAreaView} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import stylesy from './style';
 
 
@@ -21,19 +22,43 @@ export default function Profille() {
 
         <View style={styles('contbasica')}>
             
-            <Text style={stylesy.textdata}>Nome:  {user.nome}</Text>
-            <Text style={stylesy.textdata}>Sobrenome:  {user.sobrenome}</Text>
-            <Text style={stylesy.textdata}>Nasci:  {user.ano}</Text>
-            <Text style={stylesy.textdata}>Pai:  {user.nomepai}</Text>
-            <Text style={stylesy.textdata}>Máe:  {user.nomemae}</Text>
+            <Text style={stylesy.textdata}>Idade:  {user.ano}</Text>
+            <Text style={stylesy.textdata}>Altura:  {user.estatura}</Text>
+            <Text style={stylesy.textdata}>Peso:  {user.estatura}</Text>
+            <Text style={stylesy.textdata}>Posicao:  {user.estatura}</Text>
       
      </View>
      <View style={styles('contbasica')}>
-       
-        <Text style={stylesy.textdata}>Estado:  {user.endereco}</Text>
-        <Text style={stylesy.textdata}>Cidade:  {user.endereco}</Text>
-        <Text style={stylesy.textdata}>Bairro:  {user.endereco}</Text>
-     
+        <View style={styles('envolvemenu')}>
+           <View style={styles('menutext')}>
+                <Text style={stylesy.textdata}>Meus videos</Text>
+             </View>
+             <View style={styles('menuint')}>
+                <AntDesign name="down" size={20} color="white"/>
+            </View>
+        </View>
+    </View>
+
+    <View style={styles('contbasica')}>
+    <View style={styles('envolvemenu')}>
+           <View style={styles('menutext')}>
+                <Text style={stylesy.textdata}>Historico Escolar</Text>
+             </View>
+             <View style={styles('menuint')}>
+                <AntDesign name="down" size={20} color="white"/>
+            </View>
+        </View>
+    </View>
+
+    <View style={styles('contbasica')}>
+    <View style={styles('envolvemenu')}>
+           <View style={styles('menutext')}>
+                <Text style={stylesy.textdata}>Nivel de in</Text>
+             </View>
+             <View style={styles('menuint')}>
+                <AntDesign name="down" size={20} color="white"/>
+            </View>
+        </View>
     </View>
     
 
@@ -43,23 +68,8 @@ export default function Profille() {
         <View style={styles('contrigth')}>
 
         <View style={styles('contbasica')}>
-            <Text style={stylesy.textdata}>Email:  {user.email}</Text>
-            <Text style={stylesy.textdata}>Celular:  {user.telefone}</Text>
-            <Text style={stylesy.textdata}>Telefone do Pai:  {user.telefonepai}</Text>
-            <Text style={stylesy.textdata}>Telefone da Mãe:  {user.telefonemae}</Text>
-            <Text style={stylesy.textdata}>Telefone de emergencia:  {user.telefoneemergencia}</Text>
-            </View>
-            <View style={styles('contbasica')}>
-            <Text style={stylesy.textdata}>Estuda:  {user.estudos}</Text>
-            <Text style={stylesy.textdata}>Serie ou curso:  {user.curso}</Text>
-            <Text style={stylesy.textdata}>Nome da instituição:  {user.instnome}</Text>
-            <Text style={stylesy.textdata}>Trabalha:  {user.profissional}</Text>
-            </View>
-            <View style={styles('contbasica')}>
-            <Text style={stylesy.textdata}>Estatura: {user.estatura}</Text>
-            <Text style={stylesy.textdata}>Joga basquete:  {user.pratic}</Text>
-            <Text style={stylesy.textdata}>Quanto tempo:  {user.pratictime}</Text>
-            </View>
+            
+        </View>
 
             
         </View>
@@ -83,7 +93,21 @@ const useStyles = CreateResponsiveStyle(
         envolve:{
             width:"90%", 
             height:"100%",
-            
+        },
+        envolvemenu:{
+            width:"100%", 
+            height:40,
+            padding:5,
+            flexDirection:'row',
+        },
+        menutext:{
+            width:"50%",
+            height:40,
+        },
+        menuint:{
+            flexDirection:'row-reverse',
+            width:"50%",
+            height:40,
         },
         contbasica:{
            width:"90%",

@@ -39,6 +39,12 @@ const styles = StyleSheet.create({
     textdata:{
         color:"#fff"
     },
+    contdata:{
+        width:"80%",
+        marginLeft:12,
+        height:100,
+        justifyContent:'center',
+    },
     
     
 

@@ -1,12 +1,12 @@
 import React, { useContext, useState} from 'react';
 import { AuthContext } from '../../services/auth';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import stylesy from './style';
 import { useNavigation } from '@react-navigation/native';
-import * as ImagePicker from 'expo-image-picker';
 import Feed from '../../componets/Feed';
 import Profille from '../../componets/Profille';
 import SignUp from '../../componets/SignUp';
+import Toppro from '../../componets/Toppro';
 import Motoristas from '../../componets/Calls/Motoristas'
 import { CreateResponsiveStyle, DEVICE_SIZES } from 'rn-responsive-styles';
 
@@ -20,26 +20,10 @@ export default function Home() {
     const [call,setCall] = useState('');
     const [feed,setFeed] = useState('true');
 
-    const [image, setImage] = useState(imgURI);
+   
+   
 
-    const imgURI = (image);
-  
-    const pickImage = async () => {
-      // No permissions request is necessary for launching the image library
-      let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing:true,
-        aspect: [4, 3],
-        quality: 1,
-      });
-  
-      console.log(result);
-  
-      if (result.cancelled) {
-       setImage(result.uri)
-      }
-    };
-
+   
     const handlefeed = () => {
       setFeed('true');
       setCad('');
@@ -62,19 +46,10 @@ export default function Home() {
    <View style={styles('container')}>
 
     <View style={styles ('containsup')}>
-         <TouchableOpacity style={styles('contimg')} onPress={pickImage}>
-             <View style={styles('contphoto')}>
-              {image && <Image source={{ uri: image }} style={styles('photo')}/>}
-             </View>
-         </TouchableOpacity>
-         <View style={styles('contdata')}>
-           
-           <Text style={stylesy.textnametop}>{user.nome}</Text>
-           <Text style={stylesy.textemail}>{user.email}</Text>
-          
-           <TouchableOpacity style={styles('btnmenusair')} onPress={signOut}> <Text style={stylesy.textebtn}>Sair</Text></TouchableOpacity>
-           <TouchableOpacity style={styles('btncadnew')}> <Text style={stylesy.textebtn}>Atualizar dados</Text></TouchableOpacity>
-         </View>
+        
+              <Toppro/>
+        
+        
     </View>
     {!user.tipo && 
     <View style={styles('contmenu')}>
@@ -120,7 +95,8 @@ export default function Home() {
     
    </View>
   );
-}
+  
+        }
 
 const useStyles = CreateResponsiveStyle(
      {
@@ -148,17 +124,23 @@ const useStyles = CreateResponsiveStyle(
                height:80,
                borderRadius:50,
            },
+           thumbnail: {
+            width: 300,
+            height: 300,
+            resizeMode: 'contain',
+          },
            photo:{
-            width:"100%",
-            height:"100%",
+            width:80,
+            height:80,
+            resizeMode: "stretch",
             borderRadius:50,
         },
-           contdata:{
-               width:"80%",
-               paddingLeft:12,
-               height:100,
-               justifyContent:'center'
-           },
+        contdata:{
+          width:"80%",
+          marginLeft:12,
+          height:100,
+          justifyContent:'center',
+      },
            contmenu:{
                width:"100%",
                height:"5%",
@@ -194,6 +176,7 @@ const useStyles = CreateResponsiveStyle(
                width:"100%",
                height:"75%",
            },
+           
    
      },
    
@@ -225,9 +208,9 @@ const useStyles = CreateResponsiveStyle(
          },
          contdata:{
           width:"80%",
-          paddingLeft:5,
+          marginLeft:12,
           height:100,
-          justifyContent:'center'
+          justifyContent:'center',
       },
       btncadnew:{
         width:100,
@@ -261,14 +244,15 @@ const useStyles = CreateResponsiveStyle(
  contimg:{
   width:"12%",
   height:"80%",
+  marginLeft:15,
   alignItems:'center',
   justifyContent:'center',
  },
  contdata:{
   width:"80%",
-  paddingLeft:5,
+  marginLeft:12,
   height:100,
-  justifyContent:'center'
+  justifyContent:'center',
 },
  btncadnew:{
    width:100,
@@ -302,11 +286,13 @@ const useStyles = CreateResponsiveStyle(
          contimg:{
           width:"8%",
           height:"80%",
+          marginLeft:30,
           alignItems:'center',
           justifyContent:'center',
          },
          contdata:{
-          width:"90%",
+          width:"80%",
+          marginLeft:12,
           height:100,
           justifyContent:'center',
       },
@@ -342,11 +328,13 @@ const useStyles = CreateResponsiveStyle(
     contimg:{
      width:"8%",
      height:"80%",
+     marginLeft:40,
      alignItems:'center',
      justifyContent:'center',
     },
     contdata:{
-     width:"90%",
+     width:"80%",
+     marginLeft:12,
      height:100,
      justifyContent:'center',
  },
