@@ -17,7 +17,9 @@ export default function SignUp() {
     const [nomemae, setNomemae] = useState('');
     const [endereco, setEndereco] = useState('');
     const [estatura, setEstatura] = useState('');
+    const [peso, setPeso] = useState('');
     const [pratic, setPratic] = useState('');
+    const [posicao, setPosicao] = useState('');
     const [pratictime, setPratictime] = useState('');
     const [estudos, setEstudos] = useState('');
     const [curso, setCurso] = useState('');
@@ -32,7 +34,7 @@ export default function SignUp() {
     const {signUp} = useContext(AuthContext);
   
     function handlecad(){
-        signUp(email, password, nome, sobrenome, ano,nomepai,nomemae,endereco,estatura,pratic,pratictime,estudos,curso,instnome,profissional);
+        signUp(email, password, nome, sobrenome, ano,nomepai,nomemae,endereco,estatura,peso,pratic,posicao,pratictime,estudos,curso,instnome,profissional);
     }
  return (
     <View style={styles('container')}>
@@ -73,7 +75,7 @@ export default function SignUp() {
                onChangeText={(text) => setSobrenome(text)}
               />
                <TextInput style={styles('Input')}
-               placeholder="Ano de"
+               placeholder="Ano nascimento"
                autoCorrect={false}
                autoCapitalize="none"
                value={ano}
@@ -108,12 +110,27 @@ export default function SignUp() {
                value={estatura}
                onChangeText={(text) => setEstatura(text)}
               />
+
+              <TextInput style={styles('Input')}
+               placeholder="Peso"
+               autoCorrect={false}
+               autoCapitalize="none"
+               value={peso}
+               onChangeText={(text) => setPeso(text)}
+              />
               <TextInput style={styles('Input')}
                placeholder="Pratica basquete"
                autoCorrect={false}
                autoCapitalize="none"
                value={pratic}
                onChangeText={(text) => setPratic(text)}
+              />
+               <TextInput style={styles('Input')}
+               placeholder="Posicao"
+               autoCorrect={false}
+               autoCapitalize="none"
+               value={posicao}
+               onChangeText={(text) => setPosicao(text)}
               />
               <TextInput style={styles('Input')}
                placeholder="Quanto tempo"

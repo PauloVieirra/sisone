@@ -3,8 +3,12 @@ import { StyleSheet } from "react-native";
 const stylesy = StyleSheet.create({
 
     textinto:{
-        fontSize:16,
-        color:"#fff"
+        fontSize:20,
+        color:"#fff",
+        fontWeight:'500',
+        fontStyle:'normal',
+        
+        
     },
     textbtn:{
         fontSize:15,
@@ -15,8 +19,9 @@ const stylesy = StyleSheet.create({
         color:"#fff"
     },
     textintotitle:{
-        fontSize:20,
-        color:"#fff"
+        fontSize:14,
+        color:"#fff",
+        margin:20
     },
     
     textnametop:{

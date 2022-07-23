@@ -12,8 +12,8 @@ export default function Profille() {
  return (
   <SafeAreaView style={styles('container')}>
     <ScrollView style={styles('envolve')}
-     showsVerticalScrollIndicator={false}
-     showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
     >
           
           <View style={styles('containrow')}>
@@ -24,8 +24,8 @@ export default function Profille() {
             
             <Text style={stylesy.textdata}>Idade:  {user.ano}</Text>
             <Text style={stylesy.textdata}>Altura:  {user.estatura}</Text>
-            <Text style={stylesy.textdata}>Peso:  {user.estatura}</Text>
-            <Text style={stylesy.textdata}>Posicao:  {user.estatura}</Text>
+            <Text style={stylesy.textdata}>Peso:  {user.peso}</Text>
+            <Text style={stylesy.textdata}>Posicao:  {user.posicao}</Text>
       
      </View>
      <View style={styles('contbasica')}>
@@ -53,7 +53,7 @@ export default function Profille() {
     <View style={styles('contbasica')}>
     <View style={styles('envolvemenu')}>
            <View style={styles('menutext')}>
-                <Text style={stylesy.textdata}>Nivel de in</Text>
+                <Text style={stylesy.textdata}>Nivel de ingles</Text>
              </View>
              <View style={styles('menuint')}>
                 <AntDesign name="down" size={20} color="white"/>
@@ -65,19 +65,8 @@ export default function Profille() {
 
         </View>
 
-        <View style={styles('contrigth')}>
-
-        <View style={styles('contbasica')}>
-            
         </View>
-
-            
-        </View>
-
-        </View>
-            
-         
-            </ScrollView>
+        </ScrollView>
         </SafeAreaView>
  
   );
@@ -91,8 +80,9 @@ const useStyles = CreateResponsiveStyle(
             paddingTop:10
         },
         envolve:{
-            width:"90%", 
+            width:"100%", 
             height:"100%",
+            marginLeft:25,
         },
         envolvemenu:{
             width:"100%", 
@@ -110,19 +100,22 @@ const useStyles = CreateResponsiveStyle(
             height:40,
         },
         contbasica:{
-           width:"90%",
+           width:"92%",
            padding:5,
            paddingLeft:10,
            paddingTop:15,
            paddingBottom:15,
+           borderLeftWidth:3,
+           borderLeftColor:"#C94D20",
            margin:6,
            borderRadius:8,
            backgroundColor:'#eee:rgba(255,255,255,0.2)',
         },
         contbasicb:{
-            width:"90%",
+            width:"92%",
+            height:"97%",
             padding:5,
-            paddingLeft:10,
+            paddingLeft:5,
             paddingTop:15,
             paddingBottom:15,
             margin:6,
@@ -224,16 +217,17 @@ const useStyles = CreateResponsiveStyle(
     
          },
         contlefft:{
-            width:"50%",
+            width:"100%",
             height:"100%"
         },
         contrigth:{
-            width:"50%",
+            width:"100%",
             height:"100%"
         },
         envolve:{
             width:"90%", 
             height:"100%",
+            
             
         },
         contbasica:{

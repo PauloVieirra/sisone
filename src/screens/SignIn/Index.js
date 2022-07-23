@@ -43,10 +43,10 @@ export default function SignIn() {
                 secureTextEntry={true}
                />
                
-              <TouchableOpacity style={styles('btnlogin')} onPress={handleLogin}><Text>Login</Text></TouchableOpacity>
+              <TouchableOpacity style={styles('btnlogin')} onPress={handleLogin}><Text style={{color:"#fff"}}>Login</Text></TouchableOpacity>
               <View style={styles('contbarr')}>
-                <TouchableOpacity style={styles('btnrecovery')}><Text  style={{color:"#fff"}}>Recuperar minha conta</Text></TouchableOpacity>
-                <TouchableOpacity style={styles('btnrecovery')}onPress={() => navigation.navigate ("Preloader")}><Text  style={{color:"#fff"}}>Seletiva</Text></TouchableOpacity>
+                <TouchableOpacity style={styles('btnrecovery')}><Text  style={{color:"#000"}}>Recuperar minha conta</Text></TouchableOpacity>
+                <TouchableOpacity style={styles('btnrecovery')}onPress={() => navigation.navigate ("Preloader")}><Text  style={{color:"#000"}}>Seletiva</Text></TouchableOpacity>
               </View>
               
                </View>
@@ -206,7 +206,9 @@ const useStyles = CreateResponsiveStyle(
         width:"30%",
         height:"50%",
         borderRadius:12,
-        position:'absolute',right:50,
+        position:'absolute',
+        backgroundColor:"#eee",
+        right:"35%",
         alignItems:'center',
         justifyContent:'center',
     },
